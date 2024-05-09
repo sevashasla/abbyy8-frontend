@@ -1,0 +1,83 @@
+#lenta {
+    /* border: 1px solid #000000; */
+    background-color: #dfdfdf;
+    min-height: 60vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding-top: 0.5%;
+}
+
+.project {
+    height: 25vh;
+    /* border: 1px solid #000000; */
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
+@keyframes bigger {
+    from {
+        object-fit: cover;
+        max-width: 80%;
+        border-radius: 5%;
+    } 
+    to {
+        object-fit: cover;
+        max-width: 100%;
+        border-radius: 5%;
+    }
+}
+
+.project-image {
+    object-fit: cover;
+    max-width: 80%;
+    border-radius: 5%;
+}
+
+.project-image-clicked {
+    animation: bigger;
+    animation-duration: 0.3s;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 5%;
+}
+
+.project-link {
+    padding: 0.5%;
+    max-height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.project-name-desc-auth-code {
+    padding-top: 3%;
+    padding-bottom: 0.5%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 1%;
+}
+
+.project-name {
+    font-size: large;
+    margin: 0;
+}
+
+.project-desc {
+    margin: 0;
+}
+
+.project-authors {
+    /* border: 1px solid #000000; */
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
+.project-me {
+    font-weight: bold;
+}
