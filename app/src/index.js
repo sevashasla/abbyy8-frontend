@@ -7,11 +7,13 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div id="lenta">
+    <p style={{"font-size": "large", "textAlign": "center"}}>Projects</p>
+    <div class="lenta">
       <Project projectId={0} />
       <Project projectId={1} />
       <Project projectId={2} />
     </div>
+    <p style={{"font-size": "large", "textAlign": "center"}}>Posts</p>
   </React.StrictMode>
 );
 
