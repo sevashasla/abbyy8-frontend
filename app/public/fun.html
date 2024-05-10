@@ -10,7 +10,6 @@
       content="fun"
     />
     <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
-    <script src="fun.js"></script>
     <link rel="stylesheet" href="fun.css"></link>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -29,6 +28,39 @@
     <div id="root"></div>
     <p> Rotating Torus </p>
     <canvas id="image-canvas" width="500" height="500"></canvas>
+    <div class="slider">
+        <span>change_speed</span>
+        <input
+            id="change_speed"
+            type="range"
+            min="1"
+            max="7"
+            step="any"
+        /> 
+    </div>
+
+    <div class="slider">
+        <span>num_points</span>
+        <input
+            id="change_num_points"
+            type="range"
+            min="100"
+            max="500"
+            step="1"
+        /> 
+    </div>
+
+    <div class="slider">
+        <span>change r/R ratio</span>
+        <input
+            id="change_r_ratio"
+            type="range"
+            min="0.001"
+            max="1"
+            step="any"
+        /> 
+    </div>
+
     <hr style="width: 70%; opacity: 20%; margin-top: 2%; margin-bottom: 2%;">
     <div style="width: 60%;">
         The math behind it is actually pretty easy.
@@ -38,6 +70,6 @@
         </ul>
     </div>
     <img src="fun_torus_math.jpg" style="width: 50%; margin-top: 2%; margin-bottom: 2%"\>
-
+    <script src="fun.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
 /app/node_modules
 /app/.pnp
 /app/.pnp.js
-/app/brower_modules
+/app/bower_components
 
 # testing
 /app/coverage
@@ -18,6 +18,8 @@
 /app/.env.development.local
 /app/.env.test.local
 /app/.env.production.local
+/app/src/package-lock.json
+*package-lock.json*
 
 /app/npm-debug.log*
 /app/yarn-debug.log*

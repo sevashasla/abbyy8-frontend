@@ -14,3 +14,19 @@ body {
 #image-canvas {
     border: 2px solid black;
 }
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider input {
+    width: 20%;
+}
+
+.slider span {
+    width: 12%;
+}

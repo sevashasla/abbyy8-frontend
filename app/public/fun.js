@@ -89,7 +89,7 @@ function rotate(point3d, phi_1, phi_2) {
     return nj.dot(Rot, point3d.reshape(-1, 1))
 }
 
-function draw_torus(ctx, canvasData, R, r, phi_1, phi_2, num_steps_1=30, num_steps_2=10) {
+function draw_torus(ctx, canvasData, R, r, phi_1, phi_2, num_steps_1, num_steps_2) {
     const canvasWidth = canvasData.width;
     const canvasHeight = canvasData.height;
 
@@ -114,22 +114,66 @@ function draw_torus(ctx, canvasData, R, r, phi_1, phi_2, num_steps_1=30, num_ste
     }
 }
 
-let phi_1 = 0.0;
-let phi_2 = 0.0;
+let torus_rotation_settings = {
+    "phi_1": 0.0,
+    "phi_2": 0.0,
+    "add_phi_1": 3.1 * 2 * Math.PI / 180.0,
+    "add_phi_2": 3.0 * 2 * Math.PI / 180.0,
+    "num_steps_1": 10,
+    "num_steps_2": 10,
+    "R": 100,
+    "r": 30,
+    "r_ratio": 0.3,
+}
+
+function change_speed(speed) {
+    torus_rotation_settings.add_phi_1 = (speed + 0.1) * 2 * Math.PI / 180.0;
+    torus_rotation_settings.add_phi_2 = speed * 2 * Math.PI / 180.0;
+}
+
+function change_num_points(num_points) {
+    torus_rotation_settings.num_steps_1 = Math.floor(Math.sqrt(num_points) * 2);
+    torus_rotation_settings.num_steps_2 = Math.ceil(Math.sqrt(num_points) / 2);
+}
+
+function change_r_ratio(r_ratio) {
+    torus_rotation_settings.r_ratio = r_ratio;
+    torus_rotation_settings.r = torus_rotation_settings.R * r_ratio;
+}
 
 function draw() {
-    phi_1 += 2 * Math.PI / 43;
-    phi_2 += 2 * Math.PI / 95;
+    torus_rotation_settings.phi_1 += torus_rotation_settings.add_phi_1;
+    torus_rotation_settings.phi_2 += torus_rotation_settings.add_phi_2;
 
     const canvas = document.getElementById("image-canvas");
     if (canvas.getContext) {
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         let canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        draw_torus(ctx, canvasData, 100, 30, phi_1, phi_2);
+        draw_torus(
+            ctx, canvasData, 
+            torus_rotation_settings.R, torus_rotation_settings.r, 
+            torus_rotation_settings.phi_1, torus_rotation_settings.phi_2,
+            torus_rotation_settings.num_steps_1, torus_rotation_settings.num_steps_2
+        );
         ctx.putImageData(canvasData, 0, 0);
     }
 }
+
+speed_slider = document.getElementById("change_speed");
+speed_slider.addEventListener('input', () => {
+    change_speed(parseFloat(speed_slider.value));
+});
+
+num_points_slider = document.getElementById("change_num_points");
+num_points_slider.addEventListener('input', () => {
+    change_num_points(parseInt(num_points_slider.value));
+});
+
+r_ratio = document.getElementById("change_r_ratio");
+r_ratio.addEventListener('input', () => {
+    change_r_ratio(parseFloat(r_ratio.value));
+});
 
 window.setInterval(() => {draw()}, 30);
 // window.addEventListener("load", draw);
