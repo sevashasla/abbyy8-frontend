@@ -4,6 +4,7 @@
 /app/node_modules
 /app/.pnp
 /app/.pnp.js
+/app/brower_modules
 
 # testing
 /app/coverage
