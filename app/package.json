@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.1.0",
-  "homepage": "https://sevashasla.github.io/abbby8-frontend",
+  "homepage": "https://sevashasla.github.io/abbyy8-frontend",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
