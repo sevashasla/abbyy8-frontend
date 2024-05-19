@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/abbby8-frontend/static/css/main.a81a8781.css",
+    "main.js": "/abbby8-frontend/static/js/main.dd137323.js",
+    "static/js/453.a6a97343.chunk.js": "/abbby8-frontend/static/js/453.a6a97343.chunk.js",
+    "index.html": "/abbby8-frontend/index.html",
+    "main.a81a8781.css.map": "/abbby8-frontend/static/css/main.a81a8781.css.map",
+    "main.dd137323.js.map": "/abbby8-frontend/static/js/main.dd137323.js.map",
+    "453.a6a97343.chunk.js.map": "/abbby8-frontend/static/js/453.a6a97343.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a81a8781.css",
+    "static/js/main.dd137323.js"
+  ]
+}

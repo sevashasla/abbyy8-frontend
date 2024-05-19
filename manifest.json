@@ -1,0 +1,8 @@
+{
+  "short_name": "sevashasla",
+  "name": "Vsevolod Skorokhodov's website",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#f8f8f8"
+}
