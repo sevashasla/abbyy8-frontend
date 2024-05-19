@@ -19,5 +19,3 @@ git clone https://github.com/sevashasla/abbyy8-frontend.git
 ```bash
 cd abbyy8-frontend/app && npm start
 ```
-
-
